@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { hind } from "@/styles/fonts";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import clsx from "clsx";
 
 export const metadata: Metadata = {
   title: "Spyder Glue",
@@ -16,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-black-1`}>{children}</body>
+      <body className={clsx(hind.className, "bg-black-1")}>{children}</body>
     </html>
   );
 }
