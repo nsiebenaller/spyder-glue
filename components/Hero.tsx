@@ -1,6 +1,7 @@
 import React from "react";
 import { rozhaOne } from "@/styles/fonts";
 import clsx from "clsx";
+import Button from "./Button";
 
 const Hero = () => {
   return (
@@ -12,7 +13,7 @@ const Hero = () => {
       </div>
       <div
         className={clsx(
-          "border-black-0 border-b-4 border-l-4 border-t-4",
+          "border-b-4 border-l-4 border-t-4 border-black-0",
           "ml-16 flex flex-col rounded-l-3xl bg-cream py-[6rem] pl-[7rem] pr-16",
           "lg:ml-0 lg:rounded-l-[8rem]",
         )}
@@ -24,14 +25,7 @@ const Hero = () => {
           Strong and reliable <br /> for every home project.
         </p>
         <div>
-          <button
-            className={clsx(
-              "relative rounded-full border-2 border-black-1 bg-green-1 px-8 py-2 text-green-3 shadow-btn-1 transition-all",
-              "hover:bg-green-1-hover hover:text-black-1 hover:shadow-btn-2",
-            )}
-          >
-            Shop Now
-          </button>
+          <Button>Shop Now</Button>
         </div>
       </div>
     </section>
