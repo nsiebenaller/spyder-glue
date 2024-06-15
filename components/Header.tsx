@@ -45,11 +45,11 @@ const HeaderLink: React.FC<{ href: string; children: React.ReactNode }> = ({
   children,
 }) => {
   return (
-    <a
+    <Link
       href={href}
-      className="inline-block text-base font-light transition-all hover:text-green-1"
+      className="inline-block font-light transition-all hover:text-green-1"
     >
       {children}
-    </a>
+    </Link>
   );
 };
