@@ -1,7 +1,13 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
+  const handleLogoClick = () => {
+    if (typeof window === "undefined") return;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <header className="sticky top-0 z-50 flex justify-center bg-black-1 shadow-md">
       <div className="grid h-16 w-full max-w-7xl grid-cols-3 items-center px-8 text-white">
@@ -9,15 +15,20 @@ const Header = () => {
           <HeaderLink href="#products">Products</HeaderLink>
           <HeaderLink href="#resources">Resources</HeaderLink>
         </div>
-        <div>
-          <div className="flex flex-1 justify-center">
+        <div className="relative flex h-full flex-1 justify-center">
+          <Link
+            href="/"
+            onClick={handleLogoClick}
+            scroll={false}
+            className="absolute h-full w-[200px] transition-all hover:h-[70px] hover:w-[210px]"
+          >
             <Image
               src="/logo.svg"
               alt="SpyderGlue logo"
-              width={200}
-              height={60}
+              className="cursor-pointer"
+              fill
             />
-          </div>
+          </Link>
         </div>
         <div className="flex justify-end">
           <HeaderLink href="#contact-us">Contact Us</HeaderLink>
@@ -36,7 +47,7 @@ const HeaderLink: React.FC<{ href: string; children: React.ReactNode }> = ({
   return (
     <a
       href={href}
-      className="hover:text-green-1 inline-block text-base font-light transition-all"
+      className="inline-block text-base font-light transition-all hover:text-green-1"
     >
       {children}
     </a>

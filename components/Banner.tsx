@@ -6,14 +6,14 @@ import React from "react";
 const Banner = () => {
   return (
     <section className="w-full py-16">
-      <div className="flex h-16 items-center justify-center gap-12 overflow-hidden bg-green-1 py-16 text-green-3">
+      <div className="flex h-16 items-center justify-center gap-12 overflow-hidden bg-green-1 py-16">
         <div
           className={clsx(
             playfair.className,
-            "cursor-pointer text-[6rem] font-bold italic",
+            "cursor-pointer text-[6rem] font-bold italic text-green-3 transition-all hover:text-black-1",
           )}
         >
-          Shop
+          Shop Now
         </div>
       </div>
     </section>
