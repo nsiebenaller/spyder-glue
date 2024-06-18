@@ -2,14 +2,23 @@ import React from "react";
 import { rozhaOne } from "@/styles/fonts";
 import clsx from "clsx";
 import Button from "./Button";
+import Image from "next/image";
 
 const Hero = () => {
   return (
     <section
-      className={clsx("grid w-full grid-cols-1 gap-16 pt-20", "lg:grid-cols-2")}
+      className={clsx(
+        "z-10 grid w-full grid-cols-1 gap-16 pt-20",
+        "lg:grid-cols-2",
+      )}
     >
       <div className="flex items-center justify-end">
-        <div className="h-[200px] w-[200px] bg-green-2">PRODUCT IMAGE</div>
+        <Image
+          src="/product-1.png"
+          alt="SpyderGlue Product"
+          width={400}
+          height={400}
+        />
       </div>
       <div
         className={clsx(

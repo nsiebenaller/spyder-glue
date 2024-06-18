@@ -5,7 +5,7 @@ import Product from "./Product";
 
 const Products = () => {
   return (
-    <section className="py-20">
+    <section className="z-10 py-20">
       <div className="flex w-full flex-col justify-center gap-4">
         <h2
           className={clsx(

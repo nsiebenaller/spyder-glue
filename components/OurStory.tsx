@@ -5,11 +5,14 @@ import clsx from "clsx";
 const OurStory = () => {
   return (
     <section
-      className={clsx("grid w-full grid-cols-1 gap-16 pt-20", "lg:grid-cols-2")}
+      className={clsx(
+        "z-10 grid w-full grid-cols-1 gap-16 pt-20",
+        "lg:grid-cols-2",
+      )}
     >
       <div
         className={clsx(
-          "border-black-0 border-b-4 border-r-4 border-t-4",
+          "border-b-4 border-r-4 border-t-4 border-black-0",
           "mr-16 flex flex-col rounded-r-3xl bg-cream py-[6rem] pl-16 pr-[7rem]",
           "lg:mr-0 lg:rounded-r-[8rem]",
         )}
