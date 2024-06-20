@@ -5,8 +5,8 @@ import Product from "./Product";
 
 const Products = () => {
   return (
-    <section className="z-10 py-20">
-      <div className="flex w-full flex-col justify-center gap-4">
+    <section className="z-10 pt-20">
+      <div className="flex w-full flex-col justify-center gap-4 bg-black-1 py-10">
         <h2
           className={clsx(
             rozhaOne.className,

@@ -13,7 +13,10 @@ export default function Home() {
       <main className="flex flex-col">
         <div
           className={clsx(
-            "fixed top-0 z-0 h-full w-full bg-[url('/bg.png')] bg-cover",
+            process.env.NODE_ENV === "production"
+              ? "bg-[url('/spyder-glue/bg.png')]"
+              : "bg-[url('/bg.png')]",
+            "fixed top-0 z-0 h-full w-full bg-cover",
           )}
         />
         <Hero />

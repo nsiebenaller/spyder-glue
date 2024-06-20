@@ -1,4 +1,5 @@
 import { rozhaOne } from "@/styles/fonts";
+import Image from "next/image";
 import clsx from "clsx";
 import React from "react";
 import Button from "../Button";
@@ -9,9 +10,14 @@ const Product: React.FC<{
   price: number;
 }> = ({ name, description, price }) => {
   return (
-    <div className="flex gap-8 rounded-3xl bg-black-2 p-8">
-      <div className="flex h-[300px] w-[200px] items-center justify-center bg-green-3">
-        PRODUCT IMAGE
+    <div className="flex max-w-[600px] gap-8 rounded-3xl bg-black-2 p-8">
+      <div>
+        <Image
+          src="/product-1.png"
+          alt="SpyderGlue Product"
+          width={200}
+          height={200}
+        />
       </div>
       <div className="flex h-full flex-1 flex-col gap-4 text-cream">
         <h3

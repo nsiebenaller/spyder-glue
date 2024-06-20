@@ -12,7 +12,7 @@ const Hero = () => {
         "lg:grid-cols-2",
       )}
     >
-      <div className="flex items-center justify-end">
+      <div className="flex items-center justify-center">
         <Image
           src="/product-1.png"
           alt="SpyderGlue Product"
