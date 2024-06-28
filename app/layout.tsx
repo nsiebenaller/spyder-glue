@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { hind } from "@/styles/fonts";
 import "./globals.css";
 import clsx from "clsx";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Spyder Glue",

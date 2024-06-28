@@ -1,6 +1,7 @@
 import React from "react";
 import { rozhaOne } from "@/styles/fonts";
 import clsx from "clsx";
+import Frame from "./Frame";
 
 const OurStory = () => {
   return (
@@ -17,7 +18,13 @@ const OurStory = () => {
           "lg:mr-0 lg:rounded-r-[8rem]",
         )}
       >
-        <h2 className={clsx(rozhaOne.className, "text-7xl tracking-wide")}>
+        <h2
+          className={clsx(
+            rozhaOne.className,
+            "text-4xl tracking-wide",
+            "md:text-7xl",
+          )}
+        >
           Our Story
         </h2>
         <p className="mb-8 mt-4 text-xl font-light">
@@ -30,8 +37,12 @@ const OurStory = () => {
           sapien risus, elementum nec sodales ut, congue in nisl.
         </p>
       </div>
-      <div className="flex items-center justify-start">
-        <div className="h-[200px] w-[200px] bg-green-2">PERSON IMAGE</div>
+      <div className="flex items-center justify-center">
+        <Frame>
+          <div className="flex h-[400px] w-[400px] items-center justify-center rounded-2xl bg-green-2">
+            PERSON IMAGE
+          </div>
+        </Frame>
       </div>
     </section>
   );

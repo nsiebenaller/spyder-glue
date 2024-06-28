@@ -10,31 +10,30 @@ const Product: React.FC<{
   price: number;
 }> = ({ name, description, price }) => {
   return (
-    <div className="flex max-w-[600px] gap-8 rounded-3xl bg-black-2 p-8">
-      <div>
+    <div className="grid h-full w-full max-w-[600px] grid-cols-2 justify-between gap-8 rounded-3xl bg-black-2 p-8">
+      <div className="relative h-[200px] w-[200px]">
         <Image
           src="/product-1.png"
           alt="SpyderGlue Product"
-          width={200}
-          height={200}
+          fill
+          style={{ objectFit: "cover" }}
         />
       </div>
-      <div className="flex h-full flex-1 flex-col gap-4 text-cream">
+      <div className="grid h-full grid-rows-[min-content_1fr_min-content] flex-col gap-4 text-cream">
         <h3
           className={clsx(
             rozhaOne.className,
-            "text-left text-5xl tracking-wide",
+            "text-left text-2xl tracking-wide",
+            "md:text-5xl",
             "text-cream",
           )}
         >
           {name}
         </h3>
         <p className="font-light">{description}</p>
-        <Price amount={price} />
-        <div className="flex h-full flex-row-reverse">
-          <div className="flex flex-col-reverse">
-            <Button>Buy Now</Button>
-          </div>
+        <div className="flex justify-between">
+          <Price amount={price} />
+          <Button>Buy Now</Button>
         </div>
       </div>
     </div>

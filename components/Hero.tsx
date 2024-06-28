@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section
       className={clsx(
-        "z-10 grid w-full grid-cols-1 gap-16 pt-20",
+        "z-10 grid w-full grid-cols-1 gap-16 pt-40",
         "lg:grid-cols-2",
       )}
     >
@@ -27,7 +27,13 @@ const Hero = () => {
           "lg:ml-0 lg:rounded-l-[8rem]",
         )}
       >
-        <h2 className={clsx(rozhaOne.className, "text-7xl tracking-wide")}>
+        <h2
+          className={clsx(
+            rozhaOne.className,
+            "text-4xl tracking-wide",
+            "md:text-7xl",
+          )}
+        >
           Stronger <br /> Than Steel
         </h2>
         <p className="mb-8 mt-4 text-xl font-light">
