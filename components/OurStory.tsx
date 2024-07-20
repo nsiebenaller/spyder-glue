@@ -6,6 +6,7 @@ import Frame from "./Frame";
 const OurStory = () => {
   return (
     <section
+      id="our-story"
       className={clsx(
         "z-10 grid w-full grid-cols-1 gap-16 pt-20",
         "lg:grid-cols-2",
@@ -19,7 +20,6 @@ const OurStory = () => {
         )}
       >
         <h2
-          id="our-story"
           className={clsx(
             fonts.rozhaOne,
             "text-4xl tracking-wide",

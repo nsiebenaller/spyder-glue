@@ -6,10 +6,9 @@ import product1PNG from "@/public/product-1.png";
 
 const Products = () => {
   return (
-    <section className="z-10 pt-20">
+    <section id="products" className="z-10 pt-20">
       <div className="flex w-full flex-col justify-center gap-4 border-t border-black-2 bg-black-1 py-10">
         <h2
-          id="products"
           className={clsx(
             fonts.rozhaOne,
             "text-center text-4xl tracking-wide text-cream",

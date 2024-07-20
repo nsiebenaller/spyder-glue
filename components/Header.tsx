@@ -125,26 +125,40 @@ const MobileMenu: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
         </div>
 
         <div className="flex flex-col gap-4">
-          <MobileMenuItem label="Our Story" href="#our-story" />
-          <MobileMenuItem label="Products" href="#products" />
-          <MobileMenuItem label="Resources" href="#resources" />
-          <MobileMenuItem label="Contact Us" href="#contact-us" />
+          <MobileMenuItem
+            label="Our Story"
+            href="#our-story"
+            onClose={onClose}
+          />
+          <MobileMenuItem label="Products" href="#products" onClose={onClose} />
+          <MobileMenuItem
+            label="Resources"
+            href="#resources"
+            onClose={onClose}
+          />
+          <MobileMenuItem
+            label="Contact Us"
+            href="#contact-us"
+            onClose={onClose}
+          />
         </div>
       </div>
     </>
   );
 };
 
-const MobileMenuItem: React.FC<{ label: string; href: string }> = ({
-  label,
-  href,
-}) => {
+const MobileMenuItem: React.FC<{
+  label: string;
+  href: string;
+  onClose: () => void;
+}> = ({ label, href, onClose }) => {
   return (
     <Link
       href={href}
       className={clsx(
         `${fonts.hind} text-lg font-bold text-cream hover:text-green-1`,
       )}
+      onClick={() => onClose()}
     >
       {label}
     </Link>

@@ -10,9 +10,11 @@ const ContactUs = () => {
   const [subject, setSubject] = React.useState<string>("");
   const [body, setBody] = React.useState<string>("");
   return (
-    <section className="z-10 flex w-full flex-col gap-4 bg-black-1 py-16">
+    <section
+      id="contact-us"
+      className="z-10 flex w-full flex-col gap-4 bg-black-1 py-16"
+    >
       <h2
-        id="contact-us"
         className={clsx(
           fonts.rozhaOne,
           "text-center text-7xl tracking-wide",

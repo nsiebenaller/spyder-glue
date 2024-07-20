@@ -5,9 +5,11 @@ import Resource from "./Resource";
 
 const Resources = () => {
   return (
-    <section className="z-10 flex w-full flex-col gap-4 bg-black-1 py-16">
+    <section
+      id="resources"
+      className="z-10 flex w-full flex-col gap-4 bg-black-1 py-16"
+    >
       <h2
-        id="resources"
         className={clsx(
           fonts.rozhaOne,
           "text-center text-7xl tracking-wide",
