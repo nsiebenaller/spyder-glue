@@ -7,19 +7,18 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      "black-0": "#000000",
-      "black-1": "#212121",
-      "black-2": "#303730",
-      white: "#FFFFFF",
-      cream: "#F0F0E9",
-      "green-1": "#7FFC41",
-      "green-1-hover": "#75E93B",
-      "green-2": "#43BE06",
-      "green-3": "#236B08",
-    },
-
     extend: {
+      colors: {
+        "black-0": "#000000",
+        "black-1": "#212121",
+        "black-2": "#303730",
+        white: "#FFFFFF",
+        cream: "#F0F0E9",
+        "green-1": "#7FFC41",
+        "green-1-hover": "#75E93B",
+        "green-2": "#43BE06",
+        "green-3": "#236B08",
+      },
       backgroundImage: {
         web: "url('/bg.png')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

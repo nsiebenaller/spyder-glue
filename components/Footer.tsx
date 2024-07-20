@@ -25,8 +25,8 @@ const Footer = () => {
             <Link href="#products" className="hover:text-green-1">
               Products
             </Link>
-            <Link href="#references" className="hover:text-green-1">
-              References
+            <Link href="#resources" className="hover:text-green-1">
+              Resources
             </Link>
             <Link href="#references" className="hover:text-green-1">
               Contact Us

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 import fonts from "@/styles/fonts";
+import Icon from "./Icon";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState<boolean>(false);
@@ -53,15 +54,13 @@ const Header = () => {
           <HeaderLink href="#contact-us">Contact Us</HeaderLink>
         </div>
         <div className="absolute right-4 flex h-full flex-col justify-center md:hidden">
-          <span
-            className="material-symbols-rounded cursor-pointer text-white hover:text-green-1"
+          <Icon
+            icon="menu"
+            className="cursor-pointer text-white hover:text-green-1"
             onClick={() => {
-              console.log("CLICK");
               setMobileMenuOpen((prev) => !prev);
             }}
-          >
-            menu
-          </span>
+          />
         </div>
       </div>
       <MobileMenu
@@ -115,12 +114,11 @@ const MobileMenu: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
             height={50}
           />
           <div className="flex justify-end">
-            <span
-              className="material-symbols-rounded cursor-pointer text-cream hover:text-green-1"
+            <Icon
+              icon="close"
+              className="cursor-pointer text-cream hover:text-green-1"
               onClick={() => onClose()}
-            >
-              close
-            </span>
+            />
           </div>
         </div>
 
