@@ -21,17 +21,18 @@ const Hero = () => {
         />
       </div>
       <div
-        className={clsx(
-          "border-b-4 border-l-4 border-t-4 border-black-0",
-          "ml-16 flex flex-col rounded-l-3xl bg-cream py-[6rem] pl-[7rem] pr-16",
-          "lg:ml-0 lg:rounded-l-[8rem]",
-        )}
+        className={
+          clsx("flex flex-col text-cream")
+          // "border-b-4 border-l-4 border-t-4 border-black-0",
+          // "ml-16 flex flex-col rounded-l-3xl bg-cream py-[6rem] pl-[7rem] pr-16",
+          // "lg:ml-0 lg:rounded-l-[8rem]",
+        }
       >
         <h2
           className={clsx(
             fonts.rozhaOne,
-            "text-4xl tracking-wide",
-            "md:text-7xl",
+            "",
+            "drop-shadow-wh leading-none drop-shadow-lg md:text-[92px]",
           )}
         >
           Stronger <br /> Than Steel

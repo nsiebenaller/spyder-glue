@@ -26,8 +26,8 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       boxShadow: {
-        "btn-1": "3px 4px 0px rgba(0,0,0,1)",
-        "btn-2": "1px 2px 0px rgba(0,0,0,1)",
+        "btn-1": "3px 4px 0px rgba(67,190,6,1)",
+        "btn-2": "1px 2px 0px rgba(67,190,6,1)",
       },
     },
   },
