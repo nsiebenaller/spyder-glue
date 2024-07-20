@@ -17,19 +17,21 @@ const Footer = () => {
           </div>
           <div className="text-sm font-light">© SpyderGlue LLC 2024</div>
         </div>
-        <div className="flex flex-col py-12 text-right font-light">
-          <Link href="#our-story" className="hover:text-green-1">
-            Our Story
-          </Link>
-          <Link href="#products" className="hover:text-green-1">
-            Products
-          </Link>
-          <Link href="#references" className="hover:text-green-1">
-            References
-          </Link>
-          <Link href="#references" className="hover:text-green-1">
-            Contact Us
-          </Link>
+        <div className="flex flex-col justify-center">
+          <div className="flex flex-col py-12 text-right font-light">
+            <Link href="#our-story" className="hover:text-green-1">
+              Our Story
+            </Link>
+            <Link href="#products" className="hover:text-green-1">
+              Products
+            </Link>
+            <Link href="#references" className="hover:text-green-1">
+              References
+            </Link>
+            <Link href="#references" className="hover:text-green-1">
+              Contact Us
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
