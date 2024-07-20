@@ -1,19 +1,22 @@
-import { rozhaOne } from "@/styles/fonts";
-import Image from "next/image";
+import fonts from "@/styles/fonts";
+import Image, { StaticImageData } from "next/image";
 import clsx from "clsx";
 import React from "react";
 import Button from "../Button";
+import Link from "next/link";
 
 const Product: React.FC<{
   name: string;
   description: string;
   price: number;
-}> = ({ name, description, price }) => {
+  image: StaticImageData;
+  href: string;
+}> = ({ name, description, price, image, href }) => {
   return (
     <div className="grid h-full w-full max-w-[600px] grid-cols-2 justify-between gap-8 rounded-3xl bg-black-2 p-8">
       <div className="relative h-[200px] w-[200px]">
         <Image
-          src="/product-1.png"
+          src={image}
           alt="SpyderGlue Product"
           fill
           style={{ objectFit: "cover" }}
@@ -22,7 +25,7 @@ const Product: React.FC<{
       <div className="grid h-full grid-rows-[min-content_1fr_min-content] flex-col gap-4 text-cream">
         <h3
           className={clsx(
-            rozhaOne.className,
+            fonts.rozhaOne,
             "text-left text-2xl tracking-wide",
             "md:text-5xl",
             "text-cream",
@@ -33,7 +36,9 @@ const Product: React.FC<{
         <p className="font-light">{description}</p>
         <div className="flex justify-between">
           <Price amount={price} />
-          <Button>Buy Now</Button>
+          <Link href={href}>
+            <Button>Buy Now</Button>
+          </Link>
         </div>
       </div>
     </div>

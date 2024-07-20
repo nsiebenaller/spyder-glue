@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
+import fonts from "@/styles/fonts";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState<boolean>(false);
@@ -51,10 +52,13 @@ const Header = () => {
         <div className="hidden justify-end md:flex">
           <HeaderLink href="#contact-us">Contact Us</HeaderLink>
         </div>
-        <div className="absolute right-4 block md:hidden">
+        <div className="absolute right-4 flex h-full flex-col justify-center md:hidden">
           <span
             className="material-symbols-rounded cursor-pointer text-white hover:text-green-1"
-            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            onClick={() => {
+              console.log("CLICK");
+              setMobileMenuOpen((prev) => !prev);
+            }}
           >
             menu
           </span>
@@ -77,7 +81,7 @@ const HeaderLink: React.FC<{ href: string; children: React.ReactNode }> = ({
   return (
     <Link
       href={href}
-      className="inline-block font-light transition-all hover:text-green-1"
+      className={`${fonts.hind} inline-block text-lg font-light text-cream transition-all hover:text-green-1`}
     >
       {children}
     </Link>
@@ -92,26 +96,57 @@ const MobileMenu: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
     <>
       <div
         className={clsx(
-          "pointer-events-none fixed left-0 top-0 z-40 h-full w-full bg-black-0",
-          isOpen ? "opacity-50" : "opacity-0",
+          "fixed left-0 top-0 z-40 h-full w-full bg-black-0",
+          isOpen ? "opacity-50" : "pointer-events-none opacity-0",
         )}
+        onClick={() => onClose()}
       />
       <div
         className={clsx(
-          "fixed right-0 top-0 z-50 h-full bg-black-2 shadow-2xl transition-all",
-          isOpen ? "w-[75%] p-8" : "w-0 overflow-hidden",
+          "fixed top-0 z-50 h-full w-[75%] bg-black-2 p-8 shadow-2xl transition-all",
+          isOpen ? "right-0" : "-right-[75%] overflow-hidden",
         )}
       >
-        <div className="flex justify-end">
-          <span
-            className="material-symbols-rounded cursor-pointer text-white hover:text-green-1"
-            onClick={() => onClose()}
-          >
-            close
-          </span>
+        <div className={clsx("mb-8 flex items-center justify-between")}>
+          <Image
+            src="/logo.svg"
+            alt="SpyderGlue logo"
+            width={150}
+            height={50}
+          />
+          <div className="flex justify-end">
+            <span
+              className="material-symbols-rounded cursor-pointer text-cream hover:text-green-1"
+              onClick={() => onClose()}
+            >
+              close
+            </span>
+          </div>
         </div>
-        Mobile Menu
+
+        <div className="flex flex-col gap-4">
+          <MobileMenuItem label="Our Story" href="#our-story" />
+          <MobileMenuItem label="Products" href="#products" />
+          <MobileMenuItem label="Resources" href="#resources" />
+          <MobileMenuItem label="Contact Us" href="#contact-us" />
+        </div>
       </div>
     </>
+  );
+};
+
+const MobileMenuItem: React.FC<{ label: string; href: string }> = ({
+  label,
+  href,
+}) => {
+  return (
+    <Link
+      href={href}
+      className={clsx(
+        `${fonts.hind} text-lg font-bold text-cream hover:text-green-1`,
+      )}
+    >
+      {label}
+    </Link>
   );
 };

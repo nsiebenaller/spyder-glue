@@ -1,5 +1,5 @@
 import React from "react";
-import { rozhaOne } from "@/styles/fonts";
+import fonts from "@/styles/fonts";
 import clsx from "clsx";
 import Button from "./Button";
 import Image from "next/image";
@@ -29,7 +29,7 @@ const Hero = () => {
       >
         <h2
           className={clsx(
-            rozhaOne.className,
+            fonts.rozhaOne,
             "text-4xl tracking-wide",
             "md:text-7xl",
           )}

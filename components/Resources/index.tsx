@@ -1,14 +1,15 @@
 import React from "react";
 import clsx from "clsx";
-import { rozhaOne } from "@/styles/fonts";
+import fonts from "@/styles/fonts";
 import Resource from "./Resource";
 
 const Resources = () => {
   return (
     <section className="z-10 flex w-full flex-col gap-4 bg-black-1 py-16">
       <h2
+        id="resources"
         className={clsx(
-          rozhaOne.className,
+          fonts.rozhaOne,
           "text-center text-7xl tracking-wide",
           "text-cream",
         )}

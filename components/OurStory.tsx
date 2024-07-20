@@ -1,5 +1,5 @@
 import React from "react";
-import { rozhaOne } from "@/styles/fonts";
+import fonts from "@/styles/fonts";
 import clsx from "clsx";
 import Frame from "./Frame";
 
@@ -19,8 +19,9 @@ const OurStory = () => {
         )}
       >
         <h2
+          id="our-story"
           className={clsx(
-            rozhaOne.className,
+            fonts.rozhaOne,
             "text-4xl tracking-wide",
             "md:text-7xl",
           )}
@@ -28,13 +29,16 @@ const OurStory = () => {
           Our Story
         </h2>
         <p className="mb-8 mt-4 text-xl font-light">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          sit amet blandit ante. Pellentesque ut imperdiet tellus. Aliquam erat
-          volutpat. Nullam lorem tortor, faucibus sed mi sit amet, gravida
-          lobortis ante. Sed nec tempus dui, vitae ullamcorper lorem. Maecenas
-          vitae vulputate dolor, id vestibulum tellus. Duis suscipit varius diam
-          pretium efficitur. Curabitur quis risus odio. Nulla facilisi. Donec
-          sapien risus, elementum nec sodales ut, congue in nisl.
+          USING POLYURETHANE GLUES, PRESENTLY IN THE MARKET, FOR PROJECTS ID
+          DISATISFYING. THE GLUES FOAM, RESULTING IN VOIDS AND AIR POCKETS
+          WEAKENING THE PRODUCTS PERFORMANCE, MAKING JOINTS UNSIGHTLY AND
+          DIFFICULT TO FINISH. ONCE THE PLASTIC BOTTLE IS OPENED, THE GLUE
+          SPOILS IN A SHORT TIME AND IS OF NO USE. SPYDER GLUE™️, DEVELOPED OVER
+          A NUMBER OF YEARS, COMBATS THESE SHORTCOMINGS. BUBBLING IS MINIMIZED.
+          STORING SPYDER GLUE™️ ACCORDING TO INSTRUCTIONS ALLOWS QUALITY TO BE
+          MAINTAINED FOR YEARS. VERY IMPORTANT FOR EVERYONE: A MAJOR COMPONENT
+          OF SPYDER GLUE™️ IS RENEWABLE, PLANT BASED - THEREFORE, THE GREEN
+          PORTION OF OUR LOGO.
         </p>
       </div>
       <div className="flex items-center justify-center">
