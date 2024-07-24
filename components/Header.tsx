@@ -5,6 +5,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import fonts from "@/styles/fonts";
 import Icon from "./Icon";
+import LogoSVG from "@/public/logo.svg";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState<boolean>(false);
@@ -43,7 +44,7 @@ const Header = () => {
             className="absolute h-full w-[200px] transition-all hover:h-[70px] hover:w-[210px]"
           >
             <Image
-              src="/logo.svg"
+              src={LogoSVG}
               alt="SpyderGlue logo"
               className="cursor-pointer"
               fill

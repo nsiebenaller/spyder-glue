@@ -18,6 +18,7 @@ const config: Config = {
         "green-1-hover": "#75E93B",
         "green-2": "#43BE06",
         "green-3": "#236B08",
+        "green-4": "#2f3830",
       },
       backgroundImage: {
         web: "url('/bg.png')",

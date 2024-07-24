@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import LogoSVG from "@/public/logo.svg";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
         <div className="items-left flex flex-col py-12">
           <div className="relative h-full w-[200px]">
             <Image
-              src="/logo.svg"
+              src={LogoSVG}
               alt="SpyderGlue logo"
               className="cursor-pointer"
               fill
