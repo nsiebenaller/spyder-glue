@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import Frame from "./Frame";
-import { H2 } from "./text";
+import { H2 } from "./common/typography";
 
 const OurStory = () => {
   return (

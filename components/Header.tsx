@@ -33,8 +33,9 @@ const Header = () => {
         )}
       >
         <div className="hidden gap-8 md:flex">
-          <HeaderLink href="#products">Products</HeaderLink>
-          <HeaderLink href="#resources">Resources</HeaderLink>
+          <HeaderLink href="/#shop">Shop</HeaderLink>
+          <HeaderLink href="/#resources">Resources</HeaderLink>
+          <HeaderLink href="/projects">Projects</HeaderLink>
         </div>
         <div className="relative flex h-full flex-1 justify-center">
           <Link
@@ -52,7 +53,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="hidden justify-end md:flex">
-          <HeaderLink href="#contact-us">Contact Us</HeaderLink>
+          <HeaderLink href="/#contact-us">Contact Us</HeaderLink>
         </div>
         <div className="absolute right-4 flex h-full flex-col justify-center md:hidden">
           <Icon

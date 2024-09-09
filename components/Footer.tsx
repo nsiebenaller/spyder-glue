@@ -23,13 +23,16 @@ const Footer = () => {
             <Link href="#our-story" className="hover:text-green-1">
               Our Story
             </Link>
-            <Link href="#products" className="hover:text-green-1">
-              Products
+            <Link href="/#shop" className="hover:text-green-1">
+              Shop
             </Link>
-            <Link href="#resources" className="hover:text-green-1">
+            <Link href="/#resources" className="hover:text-green-1">
               Resources
             </Link>
-            <Link href="#references" className="hover:text-green-1">
+            <Link href="/projects" className="hover:text-green-1">
+              Projects
+            </Link>
+            <Link href="/#contact-us" className="hover:text-green-1">
               Contact Us
             </Link>
           </div>

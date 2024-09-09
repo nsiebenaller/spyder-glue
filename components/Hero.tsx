@@ -3,8 +3,9 @@ import React from "react";
 import clsx from "clsx";
 import Image from "next/image";
 import Button from "./Button";
-import { H2 } from "./text";
+import { H2 } from "./common/typography";
 import productIMG from "@/public/product-1.png";
+import useInterval from "@/hooks/useInterval";
 
 const Hero = () => {
   return (
@@ -33,7 +34,7 @@ const HeroImage = () => {
         height={400}
       />
       <div className="absolute left-0 top-0 z-0 flex h-full w-full items-center justify-center">
-        <div className="bg-green-4 h-[80%] max-h-[300px] w-[80%] max-w-[500px] rotate-45 rounded-full" />
+        <div className="h-[80%] max-h-[300px] w-[80%] max-w-[500px] rotate-45 rounded-full bg-green-4" />
       </div>
     </div>
   );
@@ -72,26 +73,7 @@ const SwappableContent: SwapContent[] = [
 ];
 
 const HeroContent = () => {
-  const [index, setIndex] = React.useState<number>(0);
-  const indexRef = React.useRef<number>(index);
-  indexRef.current = index;
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      const currIndex = indexRef.current;
-      if (currIndex >= SwappableContent.length - 1) {
-        setIndex(0);
-        return;
-      }
-      const nextIndex = currIndex + 1;
-      setIndex(nextIndex);
-    }, 3000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
-  const content = SwappableContent[index];
+  const content = useInterval(SwappableContent, { interval: 3000 });
 
   return (
     <div className={clsx("flex max-w-[600px] flex-col px-8 text-cream")}>

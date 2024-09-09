@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import fonts from "@/styles/fonts";
 import "./globals.css";
 import clsx from "clsx";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Spyder Glue",
@@ -15,7 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(fonts.hind, "bg-black-1")}>{children}</body>
+      <body className={clsx(fonts.hind, "bg-black-1")}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -4,7 +4,7 @@ import clsx from "clsx";
 import fonts from "@/styles/fonts";
 import Button from "./Button";
 
-const EMAIL = "nicholaspaulsiebenaller@gmail.com";
+const EMAIL = "jim@spydergluellc.com";
 
 const ContactUs = () => {
   const [subject, setSubject] = React.useState<string>("");

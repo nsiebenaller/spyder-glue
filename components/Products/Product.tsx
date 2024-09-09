@@ -2,7 +2,8 @@ import Image, { StaticImageData } from "next/image";
 import React from "react";
 import Button from "../Button";
 import Link from "next/link";
-import { H3 } from "../text";
+import { H3 } from "../common/typography";
+import clsx from "clsx";
 
 const Product: React.FC<{
   name: string;
@@ -12,7 +13,12 @@ const Product: React.FC<{
   href: string;
 }> = ({ name, description, price, image, href }) => {
   return (
-    <div className="grid h-full w-full grid-cols-1 grid-rows-[min-content_min-content] justify-between gap-8 p-8">
+    <div
+      className={clsx(
+        "grid h-full w-full max-w-[800px] grid-cols-1 grid-rows-[min-content_min-content] justify-between gap-8 p-8",
+        "sm:grid-cols-2",
+      )}
+    >
       <ProductImage image={image} />
       <div className="grid h-full grid-rows-[min-content] flex-col text-cream">
         <H3>{name}</H3>
