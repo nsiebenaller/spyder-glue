@@ -1,18 +1,22 @@
 [
   {
     "title": "Fix My Pig",
-    "slug": "fix-my-pig"
+    "slug": "fix-my-pig",
+    "items": []
   },
   {
     "title": "Birdhouse",
-    "slug": "birdhouse"
+    "slug": "birdhouse",
+    "items": []
   },
   {
     "title": "Safety Equipment",
-    "slug": "safety-equipment"
+    "slug": "safety-equipment",
+    "items": []
   },
   {
     "title": "Directions for Use",
-    "slug": "directions-for-use"
+    "slug": "directions-for-use",
+    "items": []
   }
 ]

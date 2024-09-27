@@ -2,6 +2,7 @@
 import React from "react";
 import clsx from "clsx";
 import useInterval from "@/hooks/useInterval";
+import Link from "next/link";
 
 const CTASection = () => {
   const headerContent = useInterval(
@@ -26,9 +27,11 @@ const CTASection = () => {
           how it can transform your projects today!
         </p>
         <span>
-          <button className="rounded-full bg-black-1 px-4 py-2 tracking-wider text-white hover:text-green-1">
-            Learn More
-          </button>
+          <Link href="/projects">
+            <button className="rounded-full bg-black-1 px-4 py-2 tracking-wider text-white hover:text-green-1">
+              Learn More
+            </button>
+          </Link>
         </span>
       </div>
     </section>
