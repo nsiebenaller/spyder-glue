@@ -21,7 +21,6 @@ const config: Config = {
         "green-4": "#2f3830",
       },
       backgroundImage: {
-        web: "url('/bg.png')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",

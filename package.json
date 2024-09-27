@@ -6,14 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-types": "tsx ./scripts/generateTypes.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",
     "material-symbols": "^0.20.0",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "zod": "^3.23.8",
+    "zod-to-json-schema": "^3.23.3"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -25,6 +28,7 @@
     "prettier": "^3.3.1",
     "prettier-plugin-tailwindcss": "^0.6.2",
     "tailwindcss": "^3.4.1",
+    "tsx": "^4.19.1",
     "typescript": "^5"
   }
 }
