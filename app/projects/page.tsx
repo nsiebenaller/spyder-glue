@@ -1,5 +1,4 @@
 import { H2 } from "@/components/common/typography";
-import Footer from "@/components/Footer";
 import Frame from "@/components/Frame";
 import projectsJSON from "@/data/projects.json";
 import Link from "next/link";
@@ -10,7 +9,7 @@ export default function Projects() {
       <section className="w-[800px]">
         <H2 className="mb-10 text-cream">Projects</H2>
         <div className="flex flex-col gap-6">
-          {projectsJSON.map((project, idx) => {
+          {projectsJSON.projects.map((project, idx) => {
             return (
               <Link
                 key={`${project.title}-${idx}`}
