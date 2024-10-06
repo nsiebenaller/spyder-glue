@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <section
       className={clsx(
-        "z-10 grid w-full grid-cols-1 gap-16 pt-40",
+        "z-10 grid w-full grid-cols-1 gap-16 pt-20",
         "lg:grid-cols-2",
       )}
     >

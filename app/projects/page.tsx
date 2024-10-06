@@ -1,33 +1,35 @@
 import { H2 } from "@/components/common/typography";
 import Frame from "@/components/Frame";
-import projectsJSON from "@/data/projects.json";
 import Link from "next/link";
+import { getProjectPosts } from "@/lib/getProjectPosts";
+import Image from "next/image";
+import productIMG from "@/public/can_1-bg.png";
 
 export default function Projects() {
+  const projectPosts = getProjectPosts();
+
   return (
-    <main className="mb-20 mt-32 flex justify-center">
-      <section className="w-[800px]">
-        <H2 className="mb-10 text-cream">Projects</H2>
-        <div className="flex flex-col gap-6">
-          {projectsJSON.projects.map((project, idx) => {
-            return (
-              <Link
-                key={`${project.title}-${idx}`}
-                href={`/projects/${project.slug}`}
-              >
-                <div className="grid grid-cols-[min-content_1fr] gap-x-4">
-                  <div className="flex items-center justify-center">
-                    <Frame>
-                      <div className="flex h-[100px] w-[100px] items-center justify-center bg-cream"></div>
-                    </Frame>
-                  </div>
-                  <h3 className="text-cream">{project.title}</h3>
+    <section>
+      <H2 className="mb-10 text-cream">Projects</H2>
+      <div className="flex flex-col gap-6">
+        {projectPosts.map((post, idx) => {
+          return (
+            <Link key={`${post.title}-${idx}`} href={post.path}>
+              <div className="grid grid-cols-[min-content_1fr] items-center gap-x-4 border border-transparent hover:border-cream">
+                <div className="w-[100px] bg-cream">
+                  <Image
+                    src={productIMG}
+                    alt={`${post.title} post`}
+                    width={100}
+                    height={100}
+                  />
                 </div>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
-    </main>
+                <h3 className="text-2xl text-cream">{post.title}</h3>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+    </section>
   );
 }

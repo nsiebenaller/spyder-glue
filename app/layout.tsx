@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(fonts.hind, "bg-black-1")}>
+      <body className={clsx(fonts.hind, "mt-16 bg-black-1")}>
         <Header />
         {children}
         <Footer />
