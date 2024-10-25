@@ -31,16 +31,19 @@ const OurStoryContent = () => {
     >
       <H2>Our Story</H2>
       <p className="mb-8 mt-4 text-xl font-light">
-        USING POLYURETHANE GLUES, PRESENTLY IN THE MARKET, FOR PROJECTS ID
-        DISATISFYING. THE GLUES FOAM, RESULTING IN VOIDS AND AIR POCKETS
-        WEAKENING THE PRODUCTS PERFORMANCE, MAKING JOINTS UNSIGHTLY AND
-        DIFFICULT TO FINISH. ONCE THE PLASTIC BOTTLE IS OPENED, THE GLUE SPOILS
-        IN A SHORT TIME AND IS OF NO USE. SPYDER GLUE™️, DEVELOPED OVER A NUMBER
-        OF YEARS, COMBATS THESE SHORTCOMINGS. BUBBLING IS MINIMIZED. STORING
-        SPYDER GLUE™️ ACCORDING TO INSTRUCTIONS ALLOWS QUALITY TO BE MAINTAINED
-        FOR YEARS. VERY IMPORTANT FOR EVERYONE: A MAJOR COMPONENT OF SPYDER
-        GLUE™️ IS RENEWABLE, PLANT BASED - THEREFORE, THE GREEN PORTION OF OUR
-        LOGO.
+        The two us are so excited to be launching our new adhesive into the
+        market place! We have been involved in the adhesive industry for a
+        combined +90 years. Throughout those years, we have formulated and
+        consulted formulators producing many products that are sold by large
+        companies under many well-known brands. That said, we believe we could
+        improve product performance and ease of use. That is why we have
+        developed and tested our own brand, Spyder Glue™️. Spyder Glue™️ is an
+        industrial strength polyurethane adhesive that we feel addresses short
+        comings and is different than products currently on the market. We hope
+        you approve of the differences and create many projects with Spyder
+        Glue™️. Please review our website and use Spyder Glue™️ safely. Let us
+        know what you think of our product. Feel free to use the web page to
+        contact us.
       </p>
     </div>
   );
