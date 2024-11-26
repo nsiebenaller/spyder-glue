@@ -4,14 +4,14 @@ import Button from "../Button";
 import Link from "next/link";
 import { H3 } from "../common/typography";
 import clsx from "clsx";
+import BuyButton from "../shopify/BuyButton";
 
 const Product: React.FC<{
   name: string;
   description: string;
-  price: number;
   image: StaticImageData;
-  href: string;
-}> = ({ name, description, price, image, href }) => {
+  productId: string;
+}> = ({ name, description, image, productId }) => {
   return (
     <div
       className={clsx(
@@ -26,10 +26,7 @@ const Product: React.FC<{
         <p className="font-light">{description}</p>
         <hr className="my-4 max-w-24 border-gray-700" />
         <div className="flex items-center gap-16">
-          <Price amount={price} />
-          <Link href={href}>
-            <Button>Buy Now</Button>
-          </Link>
+          <BuyButton productId={productId} />
         </div>
       </div>
     </div>

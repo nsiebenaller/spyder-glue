@@ -12,9 +12,8 @@ const Products = () => {
           <Product
             name="Eco Spyder Glue"
             description="Experience the ultimate in eco-friendly adhesion with SpyderGlue Eco All-Purpose Glue! Crafted with sustainability in mind, SpyderGlue Eco delivers a robust, fast-drying bond on a variety of surfaces including wood, metal, plastic, ceramics, and more. Perfect for home repairs, crafting, and professional projects, SpyderGlue Eco ensures your materials stay firmly in place while minimizing environmental impact."
-            price={4.89}
             image={productIMG}
-            href="/"
+            productId={"9061855428839"}
           />
         </div>
       </div>
