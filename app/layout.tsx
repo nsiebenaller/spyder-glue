@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import fonts from "@/styles/fonts";
-import "./globals.css";
 import clsx from "clsx";
+import fonts from "@/styles/fonts";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Spyder Glue",

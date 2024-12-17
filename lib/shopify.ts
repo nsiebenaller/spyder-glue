@@ -34,7 +34,7 @@ export function loadBuyButton({
             styles: {
               product: {
                 "@media (min-width: 601px)": {
-                  "max-width": "calc(25% - 20px)",
+                  "max-width": "100%",
                   "margin-left": "20px",
                   "margin-bottom": "50px",
                 },
@@ -51,9 +51,26 @@ export function loadBuyButton({
               unitPrice: {
                 color: "#ffffff",
               },
+              description: {
+                color: "#ffffff",
+              },
+              button: {
+                "background-color": "#7FFC41",
+                color: "#236B08",
+                "font-weight": "bold",
+                ":hover": {
+                  "background-color": "#75E93B",
+                },
+              },
             },
             text: {
               button: "Add to cart",
+            },
+            layout: "horizontal",
+            contents: {
+              img: false,
+              imgWithCarousel: true,
+              description: true,
             },
           },
           productSet: {

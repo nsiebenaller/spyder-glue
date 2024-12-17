@@ -4,8 +4,9 @@ import clsx from "clsx";
 import Image from "next/image";
 import Button from "./Button";
 import { H2 } from "./common/typography";
-import productIMG from "@/public/product-1.png";
+import productIMG from "@/public/product-2.png";
 import useInterval from "@/hooks/useInterval";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -30,8 +31,8 @@ const HeroImage = () => {
         className="z-10"
         src={productIMG}
         alt="SpyderGlue Product"
-        width={400}
-        height={400}
+        width={200}
+        height={200}
       />
       <div className="absolute left-0 top-0 z-0 flex h-full w-full items-center justify-center">
         <div className="h-[80%] max-h-[300px] w-[80%] max-w-[500px] rotate-45 rounded-full bg-green-4" />
@@ -80,7 +81,9 @@ const HeroContent = () => {
       <H2>{content.title}</H2>
       <p className="mb-8 mt-4 text-xl font-light">{content.subtitle}</p>
       <div>
-        <Button>Shop Now</Button>
+        <Link href="/#shop">
+          <Button>Shop Now</Button>
+        </Link>
       </div>
     </div>
   );

@@ -1,53 +1,33 @@
-import Image, { StaticImageData } from "next/image";
+"use client";
 import React from "react";
-import Button from "../Button";
-import Link from "next/link";
-import { H3 } from "../common/typography";
-import clsx from "clsx";
-import BuyButton from "../shopify/BuyButton";
+import { loadBuyButton } from "@/lib/shopify";
 
 const Product: React.FC<{
-  name: string;
-  description: string;
-  image: StaticImageData;
   productId: string;
-}> = ({ name, description, image, productId }) => {
-  return (
-    <div
-      className={clsx(
-        "grid h-full w-full max-w-[800px] grid-cols-1 grid-rows-[min-content_min-content] justify-between gap-8 p-8",
-        "sm:grid-cols-2",
-      )}
-    >
-      <ProductImage image={image} />
-      <div className="grid h-full grid-rows-[min-content] flex-col text-cream">
-        <H3>{name}</H3>
-        <hr className="my-4 max-w-24 border-gray-700" />
-        <p className="font-light">{description}</p>
-        <hr className="my-4 max-w-24 border-gray-700" />
-        <div className="flex items-center gap-16">
-          <BuyButton productId={productId} />
-        </div>
-      </div>
-    </div>
-  );
+}> = ({ productId }) => {
+  return <BuyButton productId={productId} />;
 };
 
 export default Product;
 
-const ProductImage: React.FC<{ image: StaticImageData }> = ({ image }) => {
-  return (
-    <div className="relative h-[300px] w-[300px] overflow-hidden rounded-lg">
-      <Image
-        src={image}
-        alt="SpyderGlue Product"
-        fill
-        style={{ objectFit: "cover" }}
-      />
-    </div>
-  );
-};
+const BuyButton: React.FC<{ productId: string }> = ({ productId }) => {
+  const loadedRef = React.useRef<boolean>(false);
+  const buttonRef = React.useRef<HTMLDivElement>(null);
 
-const Price: React.FC<{ amount: number }> = ({ amount }) => {
-  return <div className="whitespace-nowrap text-2xl">${amount}</div>;
+  React.useEffect(() => {
+    if (!buttonRef.current) return;
+    if (loadedRef.current) return;
+    if (buttonRef.current.dataset.loaded === "true") return;
+    loadedRef.current = true;
+    buttonRef.current.dataset.loaded = "true";
+    loadBuyButton({
+      domain: "1ezzbp-t5.myshopify.com",
+      storefrontAccessToken: "f233627e70e40f0d4deac23adae373b4",
+      node: buttonRef.current,
+      productId,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return <div ref={buttonRef} />;
 };

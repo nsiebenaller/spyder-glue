@@ -51,6 +51,11 @@ const Resources = () => {
             label="Storage and Preserving Spyder Glue"
             href="/documents/storage_and_preserving_spyder_glue.pdf"
           />
+          <ResourceItem
+            variant="document"
+            label="Safety Data Sheet"
+            href="/documents/sds_11-11-2024.docx"
+          />
         </div>
       </div>
     </section>
@@ -68,7 +73,7 @@ const ResourceItem: React.FC<{
     <Link href={href} passHref target="_blank">
       <div
         className={clsx(
-          "border-transparent group grid h-full w-full max-w-[400px] cursor-pointer grid-cols-[min-content_1fr] gap-2 border p-2 text-cream",
+          "group grid h-full w-full max-w-[400px] cursor-pointer grid-cols-[min-content_1fr] gap-2 border border-transparent p-2 text-cream",
           "transition-all hover:border-white",
         )}
       >
@@ -78,7 +83,7 @@ const ResourceItem: React.FC<{
             {variant}
           </span>
           <h3>{label}</h3>
-          <div className="text-black inline-flex rounded-full bg-cream px-4 opacity-0 transition-all group-hover:opacity-100">
+          <div className="inline-flex rounded-full bg-cream px-4 text-black opacity-0 transition-all group-hover:opacity-100">
             <span className="tracking-tighter">open</span>
             <Icon icon="arrow_right_alt" />
           </div>
