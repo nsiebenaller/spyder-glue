@@ -1,3 +1,5 @@
+import { createStorefrontApiClient } from "@shopify/storefront-api-client";
+
 declare global {
   var ShopifyBuy:
     | { UI: { onReady: (params: any) => Promise<any> }; buildClient: any }
@@ -131,4 +133,64 @@ export function loadBuyButton({
   }
   // Load Shopify script and initialize
   loadScript();
+}
+
+const client = createStorefrontApiClient({
+  storeDomain: "1ezzbp-t5.myshopify.com",
+  apiVersion: "2025-04",
+  publicAccessToken: "f1814f88816ed78da1553c53fcbcfc4e",
+});
+
+export default client;
+
+type BlogPost = {
+  id: string;
+  handle: string;
+  contentHtml: string;
+  image: {
+    url: string | null;
+    altText: string | null;
+  } | null;
+  title: string;
+};
+export function getBlogPosts() {
+  const blogPostsQuery = `
+    query {
+      articles(first: 100) {
+        nodes {
+          id
+          handle
+          contentHtml
+          image {
+            url
+            altText
+          }
+          title
+        }  
+      }
+    }
+  `;
+  return client.request<{ articles: { nodes: BlogPost[] } }>(blogPostsQuery);
+}
+
+export function getBlogPost(handle: string) {
+  const blogPostsQuery = `
+    query {
+      blog(handle: "main") {
+        articleByHandle(handle: "${handle}") {
+          id
+          handle
+          contentHtml
+          image {
+            url
+            altText
+          }
+          title
+        }
+      }
+    }
+  `;
+  return client.request<{ blog: { articleByHandle: BlogPost } }>(
+    blogPostsQuery,
+  );
 }
