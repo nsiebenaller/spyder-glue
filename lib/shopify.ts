@@ -1,30 +1,28 @@
 import { createStorefrontApiClient } from "@shopify/storefront-api-client";
 
-declare global {
-  var ShopifyBuy:
-    | { UI: { onReady: (params: any) => Promise<any> }; buildClient: any }
-    | undefined;
-}
+const STORE_DOMAIN = String(process.env.NEXT_PUBLIC_STORE_DOMAIN);
+const SHOPIFY_BLOG_ACCESS_TOKEN = String(
+  process.env.NEXT_PUBLIC_SHOPIFY_BLOG_ACCESS_TOKEN,
+);
+const SHOPIFY_STORE_ACCESS_TOKEN = String(
+  process.env.NEXT_PUBLIC_SHOPIFY_STORE_ACCESS_TOKEN,
+);
 
 const ShopifyScriptURL =
   "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
 
 export function loadBuyButton({
-  domain,
-  storefrontAccessToken,
   node,
   productId,
 }: {
-  domain: string;
-  storefrontAccessToken: string;
   node: HTMLElement;
   productId: string;
 }) {
   function ShopifyBuyInit() {
     if (!ShopifyBuy) return;
     const client = ShopifyBuy.buildClient({
-      domain,
-      storefrontAccessToken,
+      domain: STORE_DOMAIN,
+      storefrontAccessToken: SHOPIFY_STORE_ACCESS_TOKEN,
     });
     ShopifyBuy.UI.onReady(client).then((ui) => {
       ui.createComponent("product", {
@@ -136,9 +134,9 @@ export function loadBuyButton({
 }
 
 const client = createStorefrontApiClient({
-  storeDomain: "1ezzbp-t5.myshopify.com",
+  storeDomain: STORE_DOMAIN,
   apiVersion: "2025-04",
-  publicAccessToken: "f1814f88816ed78da1553c53fcbcfc4e",
+  publicAccessToken: SHOPIFY_BLOG_ACCESS_TOKEN,
 });
 
 export default client;

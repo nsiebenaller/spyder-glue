@@ -58,6 +58,13 @@ jobs:
       - name: Set NODE_ENV to production
         run: echo "NODE_ENV=production" >> "$GITHUB_OUTPUT"
 
+      - name: Set environment variables
+        run: |
+          touch .env
+          echo NEXT_PUBLIC_STORE_DOMAIN=${{ vars.STORE_DOMAIN }} >> .env
+          echo NEXT_PUBLIC_SHOPIFY_BLOG_ACCESS_TOKEN=${{ vars.SHOPIFY_BLOG_ACCESS_TOKEN }} >> .env
+          echo NEXT_PUBLIC_SHOPIFY_STORE_ACCESS_TOKEN=${{ vars.SHOPIFY_STORE_ACCESS_TOKEN }} >> .env
+
       - name: Install dependencies
         run: pnpm install
 

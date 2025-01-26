@@ -21,8 +21,6 @@ const BuyButton: React.FC<{ productId: string }> = ({ productId }) => {
     loadedRef.current = true;
     buttonRef.current.dataset.loaded = "true";
     loadBuyButton({
-      domain: "1ezzbp-t5.myshopify.com",
-      storefrontAccessToken: "f233627e70e40f0d4deac23adae373b4",
       node: buttonRef.current,
       productId,
     });
