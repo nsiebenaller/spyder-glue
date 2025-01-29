@@ -2,6 +2,8 @@ import React from "react";
 import clsx from "clsx";
 import Frame from "./Frame";
 import { H2 } from "./common/typography";
+import ourStoryIMG from "@/public/our-story.jpg";
+import Image from "next/image";
 
 const OurStory = () => {
   return (
@@ -65,9 +67,13 @@ const OurStoryImage = () => {
   return (
     <div className="flex items-center justify-center">
       <Frame>
-        <div className="flex h-[400px] w-[400px] items-center justify-center bg-cream">
-          PERSON IMAGE
-        </div>
+        <Image
+          className="z-10"
+          src={ourStoryIMG}
+          alt="Our Story"
+          width={600}
+          height={600}
+        />
       </Frame>
     </div>
   );
