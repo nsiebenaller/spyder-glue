@@ -1,27 +1,37 @@
+"use client";
 import { H2 } from "@/components/common/typography";
 import Link from "next/link";
 import Image from "next/image";
 import productIMG from "@/public/product-2.png";
-import { getBlogPosts } from "@/lib/shopify";
 import { publicURL } from "@/lib/publicURL";
+import useBlogPosts from "@/hooks/useBlogPosts";
 
-export default async function ProjectsPage() {
-  const blogPosts = await getBlogPosts();
+export default function ProjectsPage() {
+  const blogPosts = useBlogPosts();
 
-  if (!blogPosts.data) {
+  if (blogPosts.status === "error") {
     return (
-      <section>
-        <H2 className="mb-10 text-cream">Projects</H2>
+      <section className="text-white">
         <p>An error has occurred</p>
       </section>
     );
   }
 
+  if (blogPosts.status === "loading") {
+    return (
+      <section>
+        <p className="text-white">loading...</p>
+      </section>
+    );
+  }
+
+  const posts = blogPosts.data.data?.articles.nodes || [];
+
   return (
     <section>
       <H2 className="mb-10 text-cream">Projects</H2>
       <div className="flex flex-col gap-6">
-        {blogPosts.data.articles.nodes.map((blogPost) => {
+        {posts.map((blogPost) => {
           return (
             <Link
               key={blogPost.id}

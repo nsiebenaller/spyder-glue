@@ -141,7 +141,7 @@ const client = createStorefrontApiClient({
 
 export default client;
 
-type BlogPost = {
+export type BlogPost = {
   id: string;
   handle: string;
   contentHtml: string;

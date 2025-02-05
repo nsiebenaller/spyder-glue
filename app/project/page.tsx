@@ -13,7 +13,7 @@ function ProjectPage() {
 
   if (blogPost.status === "error") {
     return (
-      <section>
+      <section className="text-white">
         <p>An error has occurred</p>
       </section>
     );
@@ -51,8 +51,10 @@ function ProjectPage() {
   );
 }
 
-export default function ProjectPageSuspense() {
-  <Suspense>
-    <ProjectPage />
-  </Suspense>;
+export default function ProjectPageWrapper() {
+  return (
+    <Suspense fallback="loading...">
+      <ProjectPage />
+    </Suspense>
+  );
 }
