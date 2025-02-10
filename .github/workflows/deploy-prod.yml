@@ -1,0 +1,61 @@
+# Sample workflow for building and deploying a Next.js site to GitHub Pages
+#
+# To get started with Next.js see: https://nextjs.org/docs/getting-started
+#
+name: Deploy PROD
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
+
+      - name: Set NODE_ENV to production
+        run: echo "NODE_ENV=production" >> "$GITHUB_OUTPUT"
+
+      - name: Set environment variables
+        run: |
+          touch .env
+          echo NEXT_PUBLIC_STORE_DOMAIN=${{ vars.STORE_DOMAIN }} >> .env
+          echo NEXT_PUBLIC_SHOPIFY_BLOG_ACCESS_TOKEN=${{ vars.SHOPIFY_BLOG_ACCESS_TOKEN }} >> .env
+          echo NEXT_PUBLIC_SHOPIFY_STORE_ACCESS_TOKEN=${{ vars.SHOPIFY_STORE_ACCESS_TOKEN }} >> .env
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build with Next.js
+        run: pnpm build
+
+      - name: Upload artifact
+        uses: shallwefootball/s3-upload-action@master
+        with:
+          aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_bucket: spyderglue.com
+          source_dir: "out"
