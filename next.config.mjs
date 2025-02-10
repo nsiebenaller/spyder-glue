@@ -8,6 +8,7 @@ const nextConfig = {
   pageExtensions: ["ts", "tsx", "mdx"],
   basePath: isGithubPages ? "/spyder-glue" : undefined,
   assetPrefix: isGithubPages ? "/spyder-glue" : undefined,
+  trailingSlash: true,
 };
 
 export default nextConfig;
