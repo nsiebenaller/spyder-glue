@@ -56,7 +56,9 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
       - name: Set NODE_ENV to production
-        run: echo "NODE_ENV=production" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "NODE_ENV=production" >> "$GITHUB_OUTPUT"
+          echo "GITHUB_PAGES=true" >> "$GITHUB_OUTPUT"
 
       - name: Set environment variables
         run: |

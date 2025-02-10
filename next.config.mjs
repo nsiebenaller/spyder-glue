@@ -1,4 +1,4 @@
-const isProd = process.env.NODE_ENV === "production";
+const isGithubPages = Boolean(process.env.GITHUB_PAGES);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -6,8 +6,8 @@ const nextConfig = {
   output: "export",
   images: { unoptimized: true },
   pageExtensions: ["ts", "tsx", "mdx"],
-  basePath: isProd ? "/spyder-glue" : undefined,
-  assetPrefix: isProd ? "/spyder-glue" : undefined,
+  basePath: isGithubPages ? "/spyder-glue" : undefined,
+  assetPrefix: isGithubPages ? "/spyder-glue" : undefined,
 };
 
 export default nextConfig;
