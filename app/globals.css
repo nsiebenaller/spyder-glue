@@ -3,3 +3,9 @@
 @tailwind utilities;
 
 @import "material-symbols";
+
+/** Trademark utility class to add a white trademark unicode character */
+.tm::after {
+  content: "\2122";
+  color: white;
+}

@@ -5,6 +5,33 @@ import { H2 } from "./common/typography";
 import ourStoryIMG from "@/public/our-story.jpg";
 import Image from "next/image";
 
+const content =
+  `The two us are so excited to be launching our new adhesive into the
+        market place! We have been involved in the adhesive industry for a
+        combined +90 years. Throughout those years, we have formulated and
+        consulted formulators producing many products that are sold by large
+        companies under many well-known brands. That said, we believe we could
+        improve product performance and ease of use. That is why we have
+        developed and tested our own brand, Spyder Glue™️. Spyder Glue™️ ECO is
+        an industrial strength polyurethane adhesive that we feel addresses
+        short comings and is different than products currently on the market. It
+        is important to note that Spyder Glue™️ ECO is largely based on a
+        renewable, plant based product. There is no sacrifice to performance for
+        this - THE PLANT BASED PRODUCT IS STRONGER THAN THE PETROLEUM
+        ALTERNATIVE. Spyder Glue™️ ECO is easy to use and ideal for hobby
+        crafting, wood projects, ceramic repairs, concrete block work, and do it
+        yourself jobs around the house. It is equal or greater strength when
+        compared to products used by furniture manufacturers. So, why did we do
+        this when we are up against big name brands: we are able to offer a
+        renewable product - it is stronger, more user friendly without foaming
+        and has storage stability. We hope you approve of the differences and
+        create many projects with Spyder Glue™️. Please review our website and
+        use Spyder Glue™️ safely. Let us know what you think of our product.
+        Feel free to use the web page to contact us.`.replaceAll(
+    "™️",
+    `<b class="tm"></b>`,
+  );
+
 const OurStory = () => {
   return (
     <section
@@ -35,30 +62,10 @@ const OurStoryContent = () => {
       )}
     >
       <H2>Our Story</H2>
-      <p className="mb-8 mt-4 text-xl font-light">
-        The two us are so excited to be launching our new adhesive into the
-        market place! We have been involved in the adhesive industry for a
-        combined +90 years. Throughout those years, we have formulated and
-        consulted formulators producing many products that are sold by large
-        companies under many well-known brands. That said, we believe we could
-        improve product performance and ease of use. That is why we have
-        developed and tested our own brand, Spyder Glue™️. Spyder Glue™️ ECO is
-        an industrial strength polyurethane adhesive that we feel addresses
-        short comings and is different than products currently on the market. It
-        is important to note that Spyder Glue™️ ECO is largely based on a
-        renewable, plant based product. There is no sacrifice to performance for
-        this - THE PLANT BASED PRODUCT IS STRONGER THAN THE PETROLEUM
-        ALTERNATIVE. Spyder Glue™️ ECO is easy to use and ideal for hobby
-        crafting, wood projects, ceramic repairs, concrete block work, and do it
-        yourself jobs around the house. It is equal or greater strength when
-        compared to products used by furniture manufacturers. So, why did we do
-        this when we are up against big name brands: we are able to offer a
-        renewable product - it is stronger, more user friendly without foaming
-        and has storage stability. We hope you approve of the differences and
-        create many projects with Spyder Glue™️. Please review our website and
-        use Spyder Glue™️ safely. Let us know what you think of our product.
-        Feel free to use the web page to contact us.
-      </p>
+      <p
+        className="mb-8 mt-4 text-xl font-light"
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
     </div>
   );
 };

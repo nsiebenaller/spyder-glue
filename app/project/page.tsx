@@ -27,27 +27,28 @@ function ProjectPage() {
     );
   }
 
+  const markdown = blogPost.data.replaceAll("™️", `<b class="tm"></b>`);
   return (
-    <Markdown
-      rehypePlugins={[rehypeRaw]}
-      components={{
-        h1: ({ children }) => (
-          <h1 className="text-4xl font-extrabold tracking-tight text-white lg:text-5xl">
-            {children}
-          </h1>
-        ),
-        p: ({ children }) => (
-          <p className="my-4 font-light leading-7 text-white">{children}</p>
-        ),
-        span: ({ children }) => (
-          <span className="my-4 font-light leading-7 text-white">
-            {children}
-          </span>
-        ),
-      }}
-    >
-      {blogPost.data}
-    </Markdown>
+    <div className="text-white">
+      <Markdown
+        rehypePlugins={[rehypeRaw]}
+        components={{
+          h1: ({ children }) => (
+            <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
+              {children}
+            </h1>
+          ),
+          p: ({ children }) => (
+            <p className="my-4 font-light leading-7">{children}</p>
+          ),
+          span: ({ children }) => (
+            <span className="my-4 font-light leading-7">{children}</span>
+          ),
+        }}
+      >
+        {markdown}
+      </Markdown>
+    </div>
   );
 }
 
