@@ -24,6 +24,7 @@ const BuyButton: React.FC<{ productId: string }> = ({ productId }) => {
       node: buttonRef.current,
       productId,
     });
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

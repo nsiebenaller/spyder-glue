@@ -6,6 +6,7 @@ import Banner from "@/components/Banner";
 import Resources from "@/components/Resources";
 import ContactUs from "@/components/ContactUs";
 import CTASection from "@/components/CTASection";
+import ImportantVideo from "@/components/ImportantVideo";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <CTASection />
       <Products />
       <Banner />
+      <ImportantVideo />
       <Resources />
       <ContactUs />
     </main>
