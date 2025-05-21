@@ -61,4 +61,4 @@ jobs:
 
       - name: Sync files to S3 bucket
         run: |
-          aws s3 sync out s3://spydergluellc.com --delete
+          aws s3 sync out s3://spydergluellc.com --delete --cache-control max-age=0
