@@ -17,7 +17,7 @@ export default function ProjectsPage() {
     );
   }
 
-  if (blogPosts.status === "loading") {
+  if (blogPosts.status === "pending") {
     return (
       <section>
         <p className="text-white">loading...</p>

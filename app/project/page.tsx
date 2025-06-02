@@ -19,7 +19,7 @@ function ProjectPage() {
     );
   }
 
-  if (blogPost.status === "loading") {
+  if (blogPost.status === "pending") {
     return (
       <section>
         <p className="text-white">loading...</p>
