@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import clsx from "clsx";
+import cn from "@/lib/cn";
 import Frame from "./Frame";
 import { H2 } from "./common/typography";
 import Image from "next/image";
@@ -13,7 +13,7 @@ const OurStory = () => {
     return (
       <section
         id="our-story"
-        className={clsx(
+        className={cn(
           "z-10 mt-20 h-[800px] w-full border-t border-black-2 bg-black-1",
         )}
       ></section>
@@ -24,10 +24,10 @@ const OurStory = () => {
   return (
     <section
       id="our-story"
-      className={clsx("z-10 mt-20 w-full border-t border-black-2 bg-black-1")}
+      className={cn("z-10 mt-20 w-full border-t border-black-2 bg-black-1")}
     >
       <div
-        className={clsx(
+        className={cn(
           "m-auto grid max-w-[1500px] grid-cols-1 gap-16 py-10",
           "lg:grid-cols-2 lg:py-32",
         )}
@@ -46,7 +46,7 @@ export default OurStory;
 const OurStoryContent = ({ content }: { content: string }) => {
   return (
     <div
-      className={clsx(
+      className={cn(
         "flex flex-col rounded-r-3xl px-16 text-cream",
         "lg:mr-0 lg:rounded-r-[8rem]",
       )}

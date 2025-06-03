@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import clsx from "clsx";
+import cn from "@/lib/cn";
 import fonts from "@/styles/fonts";
 import Icon from "./Icon";
 import LogoSVG from "@/public/logo.svg";
@@ -29,7 +29,7 @@ const Header = () => {
     <header className="fixed top-0 z-30 w-full bg-black-1 shadow-md">
       <TopBanner />
       <div
-        className={clsx(
+        className={cn(
           "mx-auto grid w-full max-w-7xl grid-cols-1 items-center px-8 text-white",
           "md:grid-cols-3",
         )}
@@ -97,19 +97,19 @@ const MobileMenu: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
   return (
     <>
       <div
-        className={clsx(
+        className={cn(
           "fixed left-0 top-0 z-40 h-full w-full bg-black-0",
           isOpen ? "opacity-50" : "pointer-events-none opacity-0",
         )}
         onClick={() => onClose()}
       />
       <div
-        className={clsx(
+        className={cn(
           "fixed top-0 z-50 h-full w-[75%] bg-black-2 p-8 shadow-2xl transition-all",
           isOpen ? "right-0" : "-right-[75%] overflow-hidden",
         )}
       >
-        <div className={clsx("mb-8 flex items-center justify-between")}>
+        <div className={cn("mb-8 flex items-center justify-between")}>
           <Image
             src="/logo.svg"
             alt="SpyderGlue logo"
@@ -156,7 +156,7 @@ const MobileMenuItem: React.FC<{
   return (
     <Link
       href={href}
-      className={clsx(
+      className={cn(
         `${fonts.hind} text-lg font-bold text-cream hover:text-green-1`,
       )}
       onClick={() => onClose()}

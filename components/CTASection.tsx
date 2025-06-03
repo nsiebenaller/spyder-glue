@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import clsx from "clsx";
+import cn from "@/lib/cn";
 import useInterval from "@/hooks/useInterval";
 import Link from "next/link";
 
@@ -13,7 +13,7 @@ const CTASection = () => {
     <section className="z-10 bg-green-4 py-20">
       <div className="flex w-full justify-center">
         <h3
-          className={clsx(
+          className={cn(
             "scale-y-[1.5] transform whitespace-nowrap text-[48px] font-bold uppercase tracking-tighter text-green-4",
             "bg-gradient-to-b from-green-2 to-green-3 bg-clip-text text-transparent",
           )}

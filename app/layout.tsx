@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import clsx from "clsx";
+import cn from "@/lib/cn";
 import fonts from "@/styles/fonts";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -23,7 +23,7 @@ export default function RootLayout({
           content="Smoother than silk, Stronger than steel"
         />
       </Head>
-      <body className={clsx(fonts.hind, "mt-16 bg-black-1")}>
+      <body className={cn(fonts.hind, "mt-16 bg-black-1")}>
         <QueryClientProvider client={queryClient}>
           <Header />
           {children}

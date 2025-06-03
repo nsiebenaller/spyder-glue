@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import clsx from "clsx";
+import cn from "@/lib/cn";
 import fonts from "@/styles/fonts";
 
 export const H2 = forwardRef<
@@ -9,7 +9,7 @@ export const H2 = forwardRef<
   return (
     <h2
       ref={ref}
-      className={clsx(
+      className={cn(
         fonts.rozhaOne,
         "whitespace-nowrap text-[84px] leading-none tracking-wide",
         "md:text-[92px]",
@@ -28,11 +28,7 @@ export const H3 = forwardRef<
   return (
     <h3
       ref={ref}
-      className={clsx(
-        fonts.hind,
-        "text-3xl tracking-wide text-cream",
-        className,
-      )}
+      className={cn(fonts.hind, "text-3xl tracking-wide text-cream", className)}
       {...props}
     />
   );

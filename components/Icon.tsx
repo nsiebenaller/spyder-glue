@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import clsx from "clsx";
+import cn from "@/lib/cn";
 import { MaterialSymbol } from "material-symbols";
 
 const Icon: React.FC<{
@@ -10,7 +10,7 @@ const Icon: React.FC<{
 }> = ({ icon, className, onClick }) => {
   return (
     <span
-      className={clsx("material-symbols-rounded", className)}
+      className={cn("material-symbols-rounded", className)}
       onClick={() => onClick?.()}
     >
       {icon}

@@ -1,5 +1,5 @@
 import React from "react";
-import clsx from "clsx";
+import cn from "@/lib/cn";
 import fonts from "@/styles/fonts";
 import Icon from "../Icon";
 import Link from "next/link";
@@ -8,27 +8,27 @@ const Resources = () => {
   return (
     <section
       id="resources"
-      className={clsx(
+      className={cn(
         "z-10 flex w-full justify-center bg-black-1 px-6 py-16",
         "sm:px-24",
       )}
     >
       <div
-        className={clsx(
+        className={cn(
           "grid w-full max-w-7xl grid-cols-1 gap-4",
           "lg:grid-cols-2",
         )}
       >
         <div>
-          <h2 className={clsx(fonts.rozhaOne, "text-7xl text-cream")}>
+          <h2 className={cn(fonts.rozhaOne, "text-7xl text-cream")}>
             Resources
           </h2>
-          <p className={clsx("font-light tracking-wide text-cream")}>
+          <p className={cn("font-light tracking-wide text-cream")}>
             Explore product documentation and manuals.
           </p>
         </div>
         <div
-          className={clsx(
+          className={cn(
             "grid grid-cols-1 gap-1",
             "md:grid-cols-2",
             "lg:grid-cols-1",
@@ -72,7 +72,7 @@ const ResourceItem: React.FC<{
   return (
     <Link href={href} passHref target="_blank">
       <div
-        className={clsx(
+        className={cn(
           "group grid h-full w-full max-w-[400px] cursor-pointer grid-cols-[min-content_1fr] gap-2 border border-transparent p-2 text-cream",
           "transition-all hover:border-white",
         )}

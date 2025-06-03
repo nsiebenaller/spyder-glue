@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import clsx from "clsx";
+import cn from "@/lib/cn";
 import fonts from "@/styles/fonts";
 import Button from "./Button";
 
@@ -16,7 +16,7 @@ const ContactUs = () => {
     >
       <div className="m-auto rounded-xl bg-green-4 px-32 py-12">
         <h2
-          className={clsx(
+          className={cn(
             fonts.rozhaOne,
             "text-center text-7xl tracking-wide",
             "text-cream",

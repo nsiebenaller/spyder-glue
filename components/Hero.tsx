@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import clsx from "clsx";
+import cn from "@/lib/cn";
 import Image from "next/image";
 import Button from "./Button";
 import { H2 } from "./common/typography";
@@ -11,7 +11,7 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <section
-      className={clsx(
+      className={cn(
         "z-10 grid w-full grid-cols-1 gap-16 pt-20",
         "lg:grid-cols-2",
       )}
@@ -77,7 +77,7 @@ const HeroContent = () => {
   const content = useInterval(SwappableContent, { interval: 3000 });
 
   return (
-    <div className={clsx("flex max-w-[600px] flex-col px-8 text-cream")}>
+    <div className={cn("flex max-w-[600px] flex-col px-8 text-cream")}>
       <H2>{content.title}</H2>
       <p className="mb-8 mt-4 text-xl font-light">{content.subtitle}</p>
       <div>
