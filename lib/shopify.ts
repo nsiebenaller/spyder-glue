@@ -214,3 +214,21 @@ export function getOurStory() {
     blogPostsQuery,
   );
 }
+
+export function getBanner() {
+  const blogPostsQuery = `
+    query {
+      blog(handle: "homepage") {
+        articleByHandle(handle: "banner") {
+          id
+          handle
+          contentHtml
+          title
+        }
+      }
+    }
+  `;
+  return client.request<{ blog: { articleByHandle: BlogPost } }>(
+    blogPostsQuery,
+  );
+}

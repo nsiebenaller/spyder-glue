@@ -19,6 +19,8 @@ const OurStory = () => {
       ></section>
     );
   }
+
+  console.log("Loaded Our Story Data:", data);
   return (
     <section
       id="our-story"

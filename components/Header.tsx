@@ -6,6 +6,7 @@ import clsx from "clsx";
 import fonts from "@/styles/fonts";
 import Icon from "./Icon";
 import LogoSVG from "@/public/logo.svg";
+import TopBanner from "./TopBanner";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState<boolean>(false);
@@ -25,34 +26,34 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 z-30 h-16 w-full bg-black-1 shadow-md">
+    <header className="fixed top-0 z-30 w-full bg-black-1 shadow-md">
+      <TopBanner />
       <div
         className={clsx(
-          "mx-auto grid h-full w-full max-w-7xl grid-cols-1 items-center px-8 text-white",
+          "mx-auto grid w-full max-w-7xl grid-cols-1 items-center px-8 text-white",
           "md:grid-cols-3",
         )}
       >
-        <div className="hidden gap-8 md:flex">
+        <div className="hidden gap-8 py-3 md:flex">
           <HeaderLink href="/#shop">Shop</HeaderLink>
           <HeaderLink href="/#resources">Resources</HeaderLink>
           <HeaderLink href="/projects">Projects</HeaderLink>
         </div>
-        <div className="relative flex h-full flex-1 justify-center">
+        <div className="relative flex h-[70px] items-center justify-center">
           <Link
             href="/"
             onClick={handleLogoClick}
             scroll={false}
-            className="absolute h-full w-[200px] transition-all hover:h-[70px] hover:w-[210px]"
+            className="h-min"
           >
             <Image
               src={LogoSVG}
               alt="SpyderGlue logo"
-              className="cursor-pointer"
-              fill
+              className="h-[60px] cursor-pointer transition-all hover:h-[70px] hover:w-[210px]"
             />
           </Link>
         </div>
-        <div className="hidden justify-end md:flex">
+        <div className="hidden justify-end py-3 md:flex">
           <HeaderLink href="/#contact-us">Contact Us</HeaderLink>
         </div>
         <div className="absolute right-4 flex h-full flex-col justify-center md:hidden">

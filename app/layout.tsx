@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import type { Metadata } from "next";
 import clsx from "clsx";
 import fonts from "@/styles/fonts";
 import Header from "@/components/Header";
